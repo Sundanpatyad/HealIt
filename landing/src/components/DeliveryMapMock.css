@@ -1,0 +1,259 @@
+.delivery-mock {
+  flex-shrink: 0;
+}
+
+.delivery-screen {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-white);
+}
+
+.delivery-screen__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 44px 16px 12px;
+  background: var(--surface-white);
+}
+
+.delivery-screen__back {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.delivery-screen__label {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-violet);
+}
+
+.delivery-screen__title {
+  margin: 2px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.delivery-screen__map-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 200px;
+  margin: 0 12px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.delivery-map {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  display: block;
+}
+
+.delivery-map__route {
+  stroke-dasharray: 280;
+  stroke-dashoffset: 280;
+  animation: route-draw 2.5s ease-out forwards;
+}
+
+.delivery-map__dest {
+  animation: dest-pulse 2s ease-in-out infinite;
+}
+
+@keyframes route-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dest-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.delivery-rider {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rider-drive 5s ease-in-out infinite;
+  z-index: 2;
+}
+
+.delivery-rider__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(124, 91, 247, 0.25);
+  animation: rider-pulse 2s ease-out infinite;
+}
+
+.delivery-rider__icon {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--brand-violet);
+  color: var(--text-on-brand);
+  box-shadow: 0 4px 12px rgba(124, 91, 247, 0.45);
+}
+
+@keyframes rider-drive {
+  0% {
+    left: 14%;
+    top: 72%;
+  }
+  35% {
+    left: 32%;
+    top: 58%;
+  }
+  65% {
+    left: 52%;
+    top: 42%;
+  }
+  100% {
+    left: 68%;
+    top: 28%;
+  }
+}
+
+@keyframes rider-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.delivery-eta-chip {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--surface-white);
+  box-shadow: 0 6px 16px rgba(19, 21, 31, 0.12);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.delivery-eta-chip strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand-violet-deep);
+}
+
+.delivery-eta-chip span {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.delivery-screen__sheet {
+  margin-top: auto;
+  padding: 8px 16px 20px;
+  background: var(--surface-white);
+  border-top: 1px solid var(--divider);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -8px 24px rgba(19, 21, 31, 0.06);
+}
+
+.delivery-screen__sheet-handle {
+  width: 36px;
+  height: 4px;
+  margin: 0 auto 12px;
+  border-radius: 2px;
+  background: var(--divider);
+}
+
+.delivery-screen__rider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.delivery-screen__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--brand-lavender) 0%, var(--brand-lavender-deep) 100%);
+  color: var(--brand-violet-deep);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delivery-screen__rider-name {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.delivery-screen__rider-meta {
+  margin: 2px 0 0;
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.delivery-screen__call {
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--surface-muted);
+  color: var(--brand-violet-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.delivery-screen__order {
+  margin-top: 12px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--surface-muted);
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.delivery-screen__order strong {
+  font-size: 11px;
+  color: var(--text-primary);
+}

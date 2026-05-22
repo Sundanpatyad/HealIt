@@ -1,0 +1,21 @@
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wordmark__tagline {
+  margin: 0.5rem 0 0;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.wordmark--light .wordmark__tagline {
+  color: var(--text-on-brand);
+}
+
+.wordmark--dark .wordmark__tagline {
+  color: var(--text-secondary);
+}

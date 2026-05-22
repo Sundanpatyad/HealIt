@@ -1,0 +1,33 @@
+.footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--divider);
+  background: var(--surface-white);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.footer__links a:hover {
+  color: var(--brand-violet-deep);
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
