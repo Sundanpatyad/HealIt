@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { HealitWordmark } from './HealitWordmark';
 import './Header.css';
 
-const LINKS = [
-  { href: '#features', label: 'Features' },
-  { href: '#how', label: 'How it works' },
-  { href: '#trust', label: 'Trust' },
-  { href: '#download', label: 'Download' },
+const NAV_LINKS = [
+  { to: '/#features', label: 'Features' },
+  { to: '/#how', label: 'How it works' },
+  { to: '/#trust', label: 'Trust' },
+  { to: '/#download', label: 'Download' },
 ] as const;
 
 export function Header() {
@@ -58,11 +59,11 @@ export function Header() {
 
   return (
     <header className={headerClass}>
-      <div className="header__wrap section-inner">
+      <div className="header__wrap">
         <div className="header__bar">
-          <a className="header__logo" href="#" onClick={close} aria-label="Healit home">
-            <HealitWordmark width={108} tone="dark" />
-          </a>
+          <Link className="header__logo" to="/" onClick={close} aria-label="Healit home">
+            <HealitWordmark width={96} tone="dark" />
+          </Link>
 
           <p className="header__tagline" aria-hidden>
             <span className="header__tagline-dot" />
@@ -70,16 +71,16 @@ export function Header() {
           </p>
 
           <nav className="header__nav" aria-label="Primary">
-            {LINKS.map((link) => (
-              <a key={link.href} href={link.href}>
+            {NAV_LINKS.map((link) => (
+              <Link key={link.to} to={link.to}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
-          <a className="btn btn--primary header__cta-desktop" href="#download">
+          <Link className="btn btn--primary header__cta-desktop" to="/#download">
             Get the app
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -109,17 +110,22 @@ export function Header() {
           <p>We deliver care</p>
         </div>
         <ul className="header__panel-links">
-          {LINKS.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} onClick={close}>
+          {NAV_LINKS.map((link) => (
+            <li key={link.to}>
+              <Link to={link.to} onClick={close}>
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
+          <li>
+            <Link to="/contact" onClick={close}>
+              Contact
+            </Link>
+          </li>
         </ul>
-        <a className="btn btn--primary header__panel-cta" href="#download" onClick={close}>
+        <Link className="btn btn--primary header__panel-cta" to="/#download" onClick={close}>
           Get the app
-        </a>
+        </Link>
       </nav>
     </header>
   );

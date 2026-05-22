@@ -5,12 +5,17 @@ import './HeroPhones.css';
 export function HeroPhones() {
   return (
     <div className="hero-phones" aria-hidden>
-      <p className="hero-phones__caption">Order → track → delivered</p>
+      <span className="hero-phones__chip">
+        <span className="hero-phones__chip-dot" />
+        Live tracking
+      </span>
+
       <div className="hero-phones__stage">
-        <DeliveryMapMock />
         <PhoneMockup />
+        <DeliveryMapMock />
       </div>
-      <p className="hero-phones__scroll-hint">Swipe to see both screens</p>
+
+      <p className="hero-phones__hint">Swipe · Login &amp; delivery</p>
     </div>
   );
 }

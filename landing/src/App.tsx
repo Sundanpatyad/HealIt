@@ -1,26 +1,24 @@
-import { Cta } from './components/Cta';
-import { Features } from './components/Features';
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { HowItWorks } from './components/HowItWorks';
-import { Trust } from './components/Trust';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { SiteLayout } from './components/SiteLayout';
+import { ContactPage } from './pages/ContactPage';
+import { HomePage } from './pages/HomePage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsPage } from './pages/TermsPage';
 
 export function App() {
   return (
-    <>
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-      <Header />
-      <main id="main">
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <Trust />
-        <Cta />
-      </main>
-      <Footer />
-    </>
+    <BrowserRouter>
+      <div className="landing">
+        <Routes>
+          <Route element={<SiteLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }

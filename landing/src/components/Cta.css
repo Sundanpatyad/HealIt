@@ -3,22 +3,31 @@
   padding: var(--section-y) 0;
   background: linear-gradient(
     180deg,
-    var(--surface-white) 0%,
-    var(--surface-muted) 35%,
-    var(--brand-lavender) 70%,
+    var(--surface-muted) 0%,
+    var(--brand-lavender) 55%,
     var(--login-gradient-top) 100%
   );
   overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(124, 91, 247, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(197, 197, 255, 0.35) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .cta__glow {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(600px, 100%);
-  height: 280px;
+  width: min(640px, 110%);
+  height: 300px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(ellipse, rgba(124, 91, 247, 0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(124, 91, 247, 0.16) 0%, transparent 68%);
   pointer-events: none;
 }
 
@@ -29,40 +38,41 @@
 }
 
 .cta__card {
-  max-width: 40rem;
+  max-width: 42rem;
   margin: 0 auto;
-  padding: clamp(2rem, 6vw, 3rem) clamp(1.5rem, 5vw, 2.5rem);
+  padding: clamp(2.25rem, 6vw, 3.25rem) clamp(1.75rem, 5vw, 2.75rem);
   text-align: center;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.95);
-  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.98);
+  border-radius: calc(var(--radius-lg) + 4px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 1) inset,
-    0 24px 64px rgba(36, 20, 93, 0.1),
-    0 0 0 1px rgba(124, 91, 247, 0.08);
-  backdrop-filter: blur(12px);
+    0 28px 72px rgba(36, 20, 93, 0.1),
+    0 0 0 1px rgba(124, 91, 247, 0.06);
+  backdrop-filter: blur(16px);
 }
 
 .cta__label {
   display: inline-flex;
-  margin: 0 0 0.75rem;
-  padding: 0.35rem 0.75rem;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0.85rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--brand-violet-deep);
   background: rgba(124, 91, 247, 0.08);
+  border: 1px solid var(--border-brand);
   border-radius: 999px;
 }
 
 .cta h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.625rem, 6vw, 2.5rem);
+  font-size: clamp(1.625rem, 6vw, 2.45rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.12;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
 }
 
 .cta p {
@@ -70,11 +80,11 @@
   max-width: 26rem;
   color: var(--text-secondary);
   font-size: clamp(0.9375rem, 3.5vw, 1.0625rem);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .cta__stores {
-  margin-top: clamp(1.75rem, 4vw, 2.25rem);
+  margin-top: clamp(1.85rem, 4vw, 2.35rem);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -85,27 +95,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 0.9rem 1.35rem;
-  background: var(--text-primary);
+  gap: 0.85rem;
+  padding: 0.95rem 1.4rem;
+  background: linear-gradient(180deg, #1e2130 0%, var(--text-primary) 100%);
   color: var(--text-on-brand);
-  border-radius: 14px;
+  border-radius: 16px;
   font-size: 0.9375rem;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 24px rgba(19, 21, 31, 0.2);
+  box-shadow: 0 10px 28px rgba(19, 21, 31, 0.22);
   transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s ease;
 }
 
 .store-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(19, 21, 31, 0.28);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(19, 21, 31, 0.28);
 }
 
 .store-badge__icon {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   line-height: 1;
   opacity: 0.95;
 }
@@ -123,7 +133,8 @@
   display: block;
   font-size: 0.6875rem;
   font-weight: 500;
-  opacity: 0.75;
+  opacity: 0.72;
+  letter-spacing: 0.01em;
 }
 
 @media (min-width: 480px) {
@@ -135,7 +146,7 @@
   }
 
   .store-badge {
-    flex: 1 1 11rem;
-    max-width: 13.5rem;
+    flex: 1 1 11.5rem;
+    max-width: 14rem;
   }
 }

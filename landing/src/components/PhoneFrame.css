@@ -31,18 +31,18 @@
 
 .phone-frame__glow {
   position: absolute;
-  top: 8%;
   left: 50%;
-  width: min(260px, 100%);
-  height: min(260px, 90vw);
-  margin-left: -50%;
+  bottom: -10%;
+  width: 80%;
+  height: 36px;
+  transform: translateX(-50%);
   border-radius: 50%;
   background: radial-gradient(
-    circle,
-    rgba(124, 91, 247, 0.28) 0%,
-    rgba(124, 91, 247, 0.06) 50%,
-    transparent 72%
+    ellipse,
+    rgba(36, 20, 93, 0.25) 0%,
+    transparent 70%
   );
+  filter: blur(8px);
   pointer-events: none;
 }
 
@@ -51,13 +51,20 @@
   z-index: 1;
   width: 100%;
   max-width: 100%;
-  padding: clamp(8px, 2vw, 10px);
-  border-radius: clamp(36px, 9vw, 44px);
-  background: linear-gradient(145deg, #2a2a2e 0%, #0f0f12 48%, #1c1c22 100%);
+  padding: clamp(8px, 2vw, 11px);
+  border-radius: clamp(36px, 9vw, 46px);
+  background: linear-gradient(
+    160deg,
+    #3d3d42 0%,
+    #1a1a1e 35%,
+    #0c0c0e 55%,
+    #222228 100%
+  );
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-    0 24px 48px rgba(36, 20, 93, 0.22),
-    0 8px 24px rgba(19, 21, 31, 0.14);
+    0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 28px 56px rgba(36, 20, 93, 0.24),
+    0 10px 28px rgba(19, 21, 31, 0.16);
 }
 
 .phone-frame__island {

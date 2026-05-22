@@ -5,10 +5,12 @@ export function Trust() {
   return (
     <section className="trust" id="trust" aria-labelledby="trust-title">
       <div className="section-inner trust__inner">
-        <p className="section-label">Our promise</p>
-        <h2 className="section-title" id="trust-title">
-          Safe. Reliable. Always there.
-        </h2>
+        <header className="section-head section-head--center">
+          <p className="section-label">Our promise</p>
+          <h2 className="section-title" id="trust-title">
+            Safe. Reliable. Always there.
+          </h2>
+        </header>
         <div className="trust__panel">
           <div className="trust__copy">
             <HealitWordmark tone="light" width={100} />

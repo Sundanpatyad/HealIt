@@ -1,6 +1,10 @@
 .wordmark {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.wordmark--center {
   align-items: center;
 }
 

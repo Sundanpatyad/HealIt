@@ -49,10 +49,6 @@ body {
     padding-right: max(var(--page-gutter), env(safe-area-inset-right));
   }
 
-  .header {
-    padding-top: max(0.35rem, env(safe-area-inset-top));
-  }
-
   .footer {
     padding-bottom: max(2rem, env(safe-area-inset-bottom));
   }
