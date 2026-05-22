@@ -7,9 +7,10 @@ export function HeroPhones() {
     <div className="hero-phones" aria-hidden>
       <p className="hero-phones__caption">Order → track → delivered</p>
       <div className="hero-phones__stage">
-        <PhoneMockup />
         <DeliveryMapMock />
+        <PhoneMockup />
       </div>
+      <p className="hero-phones__scroll-hint">Swipe to see both screens</p>
     </div>
   );
 }

@@ -1,0 +1,59 @@
+/* Mobile-first layout utilities */
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+}
+
+:root {
+  --page-gutter: clamp(1rem, 4.5vw, 1.5rem);
+  --section-y: clamp(3rem, 8vw, 5rem);
+}
+
+.section-inner {
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
+@media (max-width: 479px) {
+  .btn--block-sm {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --page-gutter: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-gutter: 1.5rem;
+  }
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+  .header__inner,
+  .section-inner,
+  .footer__inner,
+  .cta__inner,
+  .features__inner,
+  .how__inner,
+  .trust__inner {
+    padding-left: max(var(--page-gutter), env(safe-area-inset-left));
+    padding-right: max(var(--page-gutter), env(safe-area-inset-right));
+  }
+
+  .header {
+    padding-top: max(0.35rem, env(safe-area-inset-top));
+  }
+
+  .footer {
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+}

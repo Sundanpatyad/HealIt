@@ -7,7 +7,11 @@ import './Hero.css';
 export function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
+      <div className="hero__mesh" aria-hidden />
+      <div className="hero__grid" aria-hidden />
       <div className="hero__ambient" aria-hidden />
+      <div className="hero__ambient hero__ambient--secondary" aria-hidden />
+
       <div className="hero__inner section-inner">
         <div className="hero__copy">
           <p className="hero__eyebrow">
@@ -46,6 +50,9 @@ export function Hero() {
               How it works
             </a>
           </div>
+          <p className="hero__footnote">
+            Free to download · No subscription · Built for India
+          </p>
         </div>
 
         <HeroPhones />

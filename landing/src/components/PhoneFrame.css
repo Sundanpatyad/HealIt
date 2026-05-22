@@ -2,29 +2,44 @@
   position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: min(280px, 85vw);
+  margin-inline: auto;
 }
 
 .phone-frame--left {
-  transform: rotate(-7deg);
   z-index: 1;
 }
 
 .phone-frame--right {
-  transform: rotate(6deg) translateY(12px);
   z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .phone-frame {
+    max-width: 252px;
+  }
+
+  .phone-frame--left {
+    transform: rotate(-7deg);
+  }
+
+  .phone-frame--right {
+    transform: rotate(6deg) translateY(12px);
+  }
 }
 
 .phone-frame__glow {
   position: absolute;
-  top: 10%;
+  top: 8%;
   left: 50%;
-  width: 260px;
-  height: 260px;
-  margin-left: -130px;
+  width: min(260px, 100%);
+  height: min(260px, 90vw);
+  margin-left: -50%;
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(124, 91, 247, 0.3) 0%,
+    rgba(124, 91, 247, 0.28) 0%,
     rgba(124, 91, 247, 0.06) 50%,
     transparent 72%
   );
@@ -34,36 +49,40 @@
 .phone-frame__device {
   position: relative;
   z-index: 1;
-  width: min(260px, 72vw);
-  padding: 10px;
-  border-radius: 44px;
+  width: 100%;
+  max-width: 100%;
+  padding: clamp(8px, 2vw, 10px);
+  border-radius: clamp(36px, 9vw, 44px);
   background: linear-gradient(145deg, #2a2a2e 0%, #0f0f12 48%, #1c1c22 100%);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-    0 40px 80px rgba(36, 20, 93, 0.26),
-    0 12px 32px rgba(19, 21, 31, 0.16);
+    0 24px 48px rgba(36, 20, 93, 0.22),
+    0 8px 24px rgba(19, 21, 31, 0.14);
 }
 
 .phone-frame__island {
   position: absolute;
-  top: 18px;
+  top: clamp(14px, 3.5vw, 18px);
   left: 50%;
   z-index: 3;
-  width: 84px;
-  height: 24px;
-  margin-left: -42px;
+  width: clamp(72px, 22vw, 84px);
+  height: clamp(20px, 5vw, 24px);
+  margin-left: calc(clamp(72px, 22vw, 84px) / -2);
   border-radius: 20px;
   background: #0a0a0c;
 }
 
 .phone-frame__screen {
   overflow: hidden;
-  border-radius: 34px;
+  border-radius: clamp(28px, 7vw, 34px);
   background: var(--surface-white);
 }
 
 @media (min-width: 768px) {
   .phone-frame__device {
-    width: 252px;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+      0 40px 80px rgba(36, 20, 93, 0.26),
+      0 12px 32px rgba(19, 21, 31, 0.16);
   }
 }

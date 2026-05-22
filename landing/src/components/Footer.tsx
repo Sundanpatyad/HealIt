@@ -1,3 +1,4 @@
+import { HealitWordmark } from './HealitWordmark';
 import './Footer.css';
 
 export function Footer() {
@@ -6,7 +7,10 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner section-inner">
-        <p>© {year} Healit. We deliver care.</p>
+        <div className="footer__brand">
+          <HealitWordmark width={88} tone="dark" />
+          <p>© {year} Healit. We deliver care.</p>
+        </div>
         <nav className="footer__links" aria-label="Footer">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms &amp; Conditions</a>
