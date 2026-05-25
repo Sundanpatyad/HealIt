@@ -4,10 +4,13 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import type { RootStackParamList } from '../navigation/types';
 import { clearOnboardingComplete } from '../services/onboardingStorage';
 import { colors, spacing, typography } from '../theme';
+import { useAuthStore } from '../store/authStore';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export function HomeScreen({ navigation }: Props) {
+  const user = useAuthStore((state) => state.user);
+
   const replayOnboarding = async () => {
     await clearOnboardingComplete();
     navigation.replace('Onboarding');
@@ -17,9 +20,14 @@ export function HomeScreen({ navigation }: Props) {
     <View style={styles.root}>
       <Text style={styles.title}>Healit delivery hub</Text>
       <Text style={styles.subtitle}>
-        Signed-in experience placeholder. Explore native blur materials and Liquid
-        glass APIs from Expo on the demo screen below.
+        Welcome back, {user?.fullName || user?.phoneNumber}! Explore the app features below.
       </Text>
+
+      <Pressable
+        style={styles.primaryBtn}
+        onPress={() => navigation.navigate('Profile')}>
+        <Text style={styles.primaryBtnLabel}>View Profile</Text>
+      </Pressable>
 
       <Pressable
         style={styles.secondaryBtn}
@@ -34,7 +42,7 @@ export function HomeScreen({ navigation }: Props) {
       </Pressable>
 
       <Text style={styles.hint}>
-        Onboarding is skipped once you finish the tour. Tap “Replay onboarding” to reset
+        Onboarding is skipped once you finish the tour. Tap "Replay onboarding" to reset
         and see it again.
       </Text>
     </View>

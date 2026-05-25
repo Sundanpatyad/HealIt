@@ -4,7 +4,7 @@
 
 export const colors = {
   brand: {
-    violet: '#7C5BF7',
+    violet: '#532FD3',
     violetDark: '#24145D',
     lavender: '#EDE9FE',
     lavenderDeep: '#E4DDFB',
@@ -17,8 +17,8 @@ export const colors = {
     navigatorTitle: '#0B0F14',
   },
   text: {
-    primary: '#13151F',
-    secondary: '#5E6677',
+    primary: '#3D3D3D',
+    secondary: '#5D5D5D',
     tertiary: '#394452',
     muted: '#5C6978',
     onBrand: '#FFFFFF',

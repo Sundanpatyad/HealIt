@@ -89,7 +89,7 @@ export const typography = {
   countryCode: {
     fontSize: 15,
     fontWeight: '600' as const,
-    color: colors.text.primary,
+    color: colors.text.secondary,
   },
   productBrand: {
     fontSize: 10,

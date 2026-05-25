@@ -53,7 +53,7 @@ export function PhoneNumberInput({
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor={colors.text.muted}
+        placeholderTextColor={colors.text.secondary}
         keyboardType="phone-pad"
         textContentType="telephoneNumber"
         autoComplete="tel"
