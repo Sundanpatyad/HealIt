@@ -33,11 +33,21 @@
   align-items: center;
   gap: 0.45rem;
   margin: 0;
-  font-size: 0.6875rem;
+  padding: 0.35rem 0.75rem 0.35rem 0.6rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--brand-violet-deep);
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(36, 20, 93, 0.06);
+}
+
+.hero__eyebrow-star {
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #f59e0b;
 }
 
 .hero__eyebrow-dot {

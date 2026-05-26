@@ -3,18 +3,21 @@ import './HowItWorks.css';
 const STEPS = [
   {
     step: '1',
-    title: 'Search & order',
-    description: 'Find medicines, add to cart, and confirm delivery to your door.',
+    title: 'Tell us what you need',
+    description:
+      'Type the medicine name, search by brand, or snap a photo of your prescription. We match you with the closest pharmacy that has it in stock.',
   },
   {
     step: '2',
-    title: 'Verified fulfillment',
-    description: 'A licensed nearby pharmacy prepares your order with care.',
+    title: 'A pharmacist preps it',
+    description:
+      'Not a warehouse. A licensed pharmacist actually opens your order, checks the strip, and packs it before it leaves the shop.',
   },
   {
     step: '3',
-    title: 'Track & receive',
-    description: 'Follow live updates until your package arrives — fast and secure.',
+    title: 'Watch it arrive',
+    description:
+      'Follow the rider on the map, get a heads-up before they ring the bell, and pay only after the doorbell rings.',
   },
 ] as const;
 
@@ -25,10 +28,10 @@ export function HowItWorks() {
         <header className="section-head section-head--center">
           <p className="section-label">How it works</p>
           <h2 className="section-title" id="how-title">
-            Three steps to relief
+            From &ldquo;I need this&rdquo; to &ldquo;Got it&rdquo; — in three steps.
           </h2>
           <p className="section-desc">
-            Simple, transparent, and designed for urgent everyday care.
+            No phone calls, no asking the neighbour, no wandering between chemists.
           </p>
         </header>
         <ol className="how__list">

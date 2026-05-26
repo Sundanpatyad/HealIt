@@ -7,8 +7,13 @@ import './Header.css';
 const NAV_LINKS = [
   { to: '/#features', label: 'Features' },
   { to: '/#how', label: 'How it works' },
-  { to: '/#trust', label: 'Trust' },
-  { to: '/#download', label: 'Download' },
+  { to: '/about', label: 'About' },
+  { to: '/faq', label: 'FAQ' },
+] as const;
+
+const MOBILE_EXTRA = [
+  { to: '/pharmacies', label: 'For pharmacies' },
+  { to: '/contact', label: 'Contact' },
 ] as const;
 
 export function Header() {
@@ -117,11 +122,13 @@ export function Header() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link to="/contact" onClick={close}>
-              Contact
-            </Link>
-          </li>
+          {MOBILE_EXTRA.map((link) => (
+            <li key={link.to}>
+              <Link to={link.to} onClick={close}>
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
         <Link className="btn btn--primary header__panel-cta" to="/#download" onClick={close}>
           Get the app

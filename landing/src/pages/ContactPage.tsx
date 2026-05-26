@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 
 import { PageShell } from '../components/PageShell';
 import { SITE } from '../constants/site';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export function ContactPage() {
+  useDocumentMeta({
+    title: 'Contact Healit',
+    description:
+      'Talk to the Healit team about orders, support, partnerships, or feedback. Real humans, real answers.',
+    path: '/contact',
+  });
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [topic, setTopic] = useState('general');

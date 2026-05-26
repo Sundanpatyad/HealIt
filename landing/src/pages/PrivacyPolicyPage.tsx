@@ -2,8 +2,16 @@ import { Link } from 'react-router-dom';
 
 import { PageShell } from '../components/PageShell';
 import { SITE } from '../constants/site';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export function PrivacyPolicyPage() {
+  useDocumentMeta({
+    title: 'Privacy Policy',
+    description:
+      'How Healit collects, uses, and protects your information when you order medicines through our app or website.',
+    path: '/privacy',
+  });
+
   return (
     <PageShell
       title="Privacy Policy"

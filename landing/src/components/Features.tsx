@@ -1,31 +1,31 @@
-import CheckIcon from '@app-svg/check.svg?react';
-import MagnifyingGlassIcon from '@app-svg/magnifying-glass.svg?react';
-import ArrowForwardIcon from '@app-svg/arrow-forward.svg?react';
-
-import { SvgIcon } from './SvgIcon';
+import {
+  PrescriptionIcon,
+  ScooterIcon,
+  ShieldCheckIcon,
+} from './icons/FeatureIcons';
 import './Features.css';
 
 const FEATURES = [
   {
-    Icon: ArrowForwardIcon,
+    Icon: ScooterIcon,
     index: '01',
-    title: 'Fast delivery',
+    title: 'On the road in minutes',
     description:
-      'Medicines from nearby stores reach you in minutes, not hours — when every moment counts.',
+      'Whether it\u2019s a 3 AM fever or a refill you forgot, a nearby pharmacy picks up the order and a rider is on the way — usually before the kettle boils.',
   },
   {
-    Icon: CheckIcon,
+    Icon: ShieldCheckIcon,
     index: '02',
-    title: 'Verified pharmacies',
+    title: 'Pharmacies you can name',
     description:
-      'Every partner store is vetted so you receive authentic products from sources you can trust.',
+      'Every partner is FSSAI-licensed. We verify paperwork, storage, and stock — so \u201Cauthentic\u201D isn\u2019t a marketing word, it\u2019s a checklist we follow.',
   },
   {
-    Icon: MagnifyingGlassIcon,
+    Icon: PrescriptionIcon,
     index: '03',
-    title: 'Full catalog',
+    title: 'Search, or just upload',
     description:
-      'Search prescriptions and OTC essentials with clear pricing and availability in real time.',
+      'Type the medicine, scan a prescription, or upload an old strip. Live pricing, in-stock status, and substitutes when the doctor allows them.',
   },
 ] as const;
 
@@ -36,10 +36,11 @@ export function Features() {
         <header className="section-head section-head--center">
           <p className="section-label">Why Healit</p>
           <h2 className="section-title" id="features-title">
-            Care that moves at your pace
+            The unglamorous stuff, done properly.
           </h2>
           <p className="section-desc">
-            Everything you need from trusted local pharmacies — without the wait or the worry.
+            Real medicines, real pharmacies, real people on the line —
+            because care isn&apos;t a marketing slogan.
           </p>
         </header>
         <div className="features__grid">
@@ -49,7 +50,7 @@ export function Features() {
                 {index}
               </span>
               <span className="feature-card__icon" aria-hidden>
-                <SvgIcon icon={Icon} width={22} height={22} />
+                <Icon width={24} height={24} />
               </span>
               <h3>{title}</h3>
               <p>{description}</p>

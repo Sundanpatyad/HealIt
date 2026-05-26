@@ -1,25 +1,36 @@
 import { Link } from 'react-router-dom';
 
 import { HealitWordmark } from './HealitWordmark';
+import {
+  InstagramIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from './icons/SocialIcons';
 import { SITE } from '../constants/site';
 import './Footer.css';
 
 const PRODUCT_LINKS = [
   { to: '/#features', label: 'Features' },
   { to: '/#how', label: 'How it works' },
-  { to: '/#trust', label: 'Trust' },
+  { to: '/faq', label: 'FAQ' },
   { to: '/#download', label: 'Download' },
 ] as const;
 
 const COMPANY_LINKS = [
+  { to: '/about', label: 'About' },
+  { to: '/pharmacies', label: 'Partner with us' },
   { to: '/contact', label: 'Contact' },
-  { to: '/contact', label: 'Partner with us' },
-  { to: '/contact', label: 'Support' },
 ] as const;
 
 const LEGAL_LINKS = [
   { to: '/privacy', label: 'Privacy Policy' },
   { to: '/terms', label: 'Terms & Conditions' },
+] as const;
+
+const SOCIAL_LINKS = [
+  { href: 'https://instagram.com/', label: 'Instagram', Icon: InstagramIcon },
+  { href: 'https://twitter.com/', label: 'Twitter / X', Icon: TwitterIcon },
+  { href: 'https://linkedin.com/', label: 'LinkedIn', Icon: LinkedInIcon },
 ] as const;
 
 export function Footer() {
@@ -37,6 +48,19 @@ export function Footer() {
             <a className="footer__contact-link" href={`mailto:${SITE.email}`}>
               {SITE.email}
             </a>
+            <ul className="footer__socials" aria-label="Social media">
+              {SOCIAL_LINKS.map(({ href, label, Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <Icon width={16} height={16} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="footer__cols">

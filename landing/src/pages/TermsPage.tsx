@@ -2,8 +2,16 @@ import { Link } from 'react-router-dom';
 
 import { PageShell } from '../components/PageShell';
 import { SITE } from '../constants/site';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export function TermsPage() {
+  useDocumentMeta({
+    title: 'Terms & Conditions',
+    description:
+      'The terms that govern your access to and use of the Healit app, website, and medicine delivery services.',
+    path: '/terms',
+  });
+
   return (
     <PageShell
       title="Terms & Conditions"

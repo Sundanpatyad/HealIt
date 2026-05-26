@@ -115,18 +115,24 @@
 }
 
 .store-badge__icon {
-  font-size: 1.45rem;
-  line-height: 1;
-  opacity: 0.95;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  flex-shrink: 0;
 }
 
-.store-badge__icon--play {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 9px 0 9px 16px;
-  border-color: transparent transparent transparent #fff;
-  background: none;
+.store-badge__icon svg {
+  display: block;
+}
+
+.store-badge__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
 }
 
 .store-badge small {

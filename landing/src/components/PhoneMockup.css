@@ -44,14 +44,14 @@
 .app-preview__hero-zone {
   position: relative;
   flex-shrink: 0;
-  height: 200px;
+  height: 208px;
 }
 
 .app-preview__artwork {
   position: relative;
-  height: 168px;
+  height: 172px;
   overflow: hidden;
-  padding: 36px 10px 0;
+  padding: 36px 12px 0;
 }
 
 .app-preview__scene {
@@ -63,14 +63,14 @@
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   padding: 7px 9px;
-  min-width: 0;
-  width: min(148px, 56vw);
-  background: rgba(255, 255, 255, 0.94);
+  width: 152px;
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.98);
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(94, 53, 177, 0.14);
+  box-shadow: 0 8px 20px rgba(94, 53, 177, 0.16);
+  backdrop-filter: blur(8px);
 }
 
 .app-preview__med-icon {
@@ -80,33 +80,57 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  background: linear-gradient(145deg, #f3f0ff, #e8e4ff);
   border-radius: 8px;
 }
 
+.app-preview__med-icon--a {
+  background: linear-gradient(145deg, #f3f0ff, #e8e4ff);
+}
+
+.app-preview__med-icon--b {
+  background: linear-gradient(145deg, #ecfdf3, #d1fadf);
+}
+
+.app-preview__med-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
 .app-preview__med-name {
-  display: block;
-  font-size: 8px;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-size: 8.5px;
+  font-weight: 600;
+  color: var(--text-primary);
   line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-preview__med-sub {
+  font-size: 6.5px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  line-height: 1.1;
 }
 
 .app-preview__med strong {
-  font-size: 10px;
+  margin-top: 1px;
+  font-size: 9.5px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--brand-violet-deep);
+  line-height: 1;
 }
 
 .app-preview__med--a {
-  top: 4px;
+  top: 2px;
   left: 0;
   transform: rotate(-5deg);
 }
 
 .app-preview__med--b {
-  top: 52px;
+  top: 54px;
   right: -2px;
   transform: rotate(4deg);
   z-index: 1;
@@ -114,25 +138,37 @@
 
 .app-preview__verified {
   position: absolute;
-  bottom: 2px;
+  bottom: 4px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 3px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px 3px 6px;
   font-size: 7px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--brand-violet-deep);
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border-brand);
   border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(94, 53, 177, 0.1);
+}
+
+.app-preview__verified-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.22);
 }
 
 .app-preview__dots {
   display: flex;
   justify-content: center;
-  gap: 5px;
-  margin-top: 8px;
+  gap: 4px;
+  margin-top: 10px;
 }
 
 .app-preview__dot {
@@ -153,12 +189,12 @@
   left: 0;
   right: 0;
   bottom: 28px;
-  height: 88px;
+  height: 90px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 38%,
-    rgba(255, 255, 255, 0.94) 72%,
+    rgba(255, 255, 255, 0.55) 38%,
+    rgba(255, 255, 255, 0.95) 72%,
     #fff 100%
   );
   pointer-events: none;
@@ -170,9 +206,10 @@
   bottom: 0;
   z-index: 2;
   transform: translate(-50%, 50%);
-  padding: 4px 8px;
+  padding: 4px 10px;
   background: var(--surface-white);
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(94, 53, 177, 0.08);
 }
 
 .app-preview__logo {
@@ -181,14 +218,17 @@
 
 .app-preview__body {
   flex: 1;
-  margin-top: 22px;
-  padding: 0 12px 14px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  padding: 0 14px 16px;
   text-align: center;
   background: var(--surface-white);
 }
 
 .app-preview__headline {
   margin: 0;
+  font-family: var(--font-display);
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -197,16 +237,16 @@
 }
 
 .app-preview__sub {
-  margin: 3px 0 0;
+  margin: 4px 0 0;
   font-size: 10px;
   color: var(--text-secondary);
 }
 
 .app-preview__field {
-  margin-top: 10px;
+  margin-top: 14px;
   display: flex;
   align-items: stretch;
-  min-height: 38px;
+  min-height: 40px;
   border: 1px solid var(--divider);
   border-radius: 12px;
   overflow: hidden;
@@ -218,7 +258,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 0 8px;
+  padding: 0 10px;
   font-size: 10px;
   font-weight: 600;
   color: var(--text-primary);
@@ -240,25 +280,30 @@
   font-size: 10px;
   font-weight: 500;
   color: var(--text-primary);
+  letter-spacing: 0.02em;
 }
 
 .app-preview__cta {
-  margin-top: 8px;
-  padding: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 12px;
   border-radius: 12px;
   background: var(--brand-violet);
   border: 1px solid rgba(255, 255, 255, 0.35);
   color: var(--text-on-brand);
   font-size: 11px;
   font-weight: 600;
-  box-shadow: 0 6px 16px rgba(124, 91, 247, 0.32);
+  box-shadow: 0 8px 18px rgba(124, 91, 247, 0.32);
 }
 
 .app-preview__or {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 10px 0 8px;
+  margin: 14px 0 10px;
 }
 
 .app-preview__or span {
@@ -268,35 +313,43 @@
 }
 
 .app-preview__or em {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 600;
   font-style: normal;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--text-tertiary);
 }
 
-.app-preview__outline {
+.app-preview__socials {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  width: 100%;
-  margin-top: 6px;
-  padding: 9px 10px;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.app-preview__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   font-family: inherit;
-  font-size: 9px;
-  font-weight: 600;
   color: var(--text-primary);
   background: var(--surface-white);
   border: 1px solid var(--divider);
   border-radius: 12px;
   cursor: default;
+  transition: border-color 0.2s ease;
 }
 
 .app-preview__legal {
-  margin: 8px 0 0;
-  font-size: 7px;
-  line-height: 1.45;
+  margin: auto 0 0;
+  padding-top: 12px;
+  font-size: 7.5px;
+  line-height: 1.5;
   color: var(--text-tertiary);
 }
 

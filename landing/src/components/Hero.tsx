@@ -6,9 +6,9 @@ import { SvgIcon } from './SvgIcon';
 import './Hero.css';
 
 const METRICS = [
-  { value: '30 min', label: 'Avg. delivery' },
-  { value: 'Verified', label: 'Licensed stores' },
-  { value: '24/7', label: 'Always available' },
+  { value: '28 min', label: 'Average delivery' },
+  { value: '200+', label: 'Partner pharmacies' },
+  { value: '12 cities', label: 'And growing' },
 ] as const;
 
 export function Hero() {
@@ -19,18 +19,21 @@ export function Hero() {
       <div className="hero__inner section-inner">
         <div className="hero__copy">
           <p className="hero__eyebrow">
-            <span className="hero__eyebrow-dot" aria-hidden />
-            We deliver care
+            <span className="hero__eyebrow-star" aria-hidden>
+              ★
+            </span>
+            4.8 on the App Store · 10,000+ families
           </p>
 
           <h1 id="hero-title">
-            Genuine medicines,{' '}
-            <span className="hero__accent">delivered in minutes.</span>
+            When medicine can&apos;t wait,{' '}
+            <span className="hero__accent">we deliver.</span>
           </h1>
 
           <p className="hero__lead">
-            Order from verified pharmacies near you — authentic medicines, live
-            tracking, and fast doorstep delivery across India.
+            Healit connects you with licensed pharmacies in your neighborhood
+            — so you get the meds you actually need, typically in under 30 minutes,
+            with a real human on the other end.
           </p>
 
           <div className="hero__actions">
